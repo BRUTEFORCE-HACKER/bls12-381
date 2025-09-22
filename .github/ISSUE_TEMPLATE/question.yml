@@ -1,0 +1,164 @@
+name: ❓ Question
+description: Ask a question about the BLS12-381 signature library
+title: "[QUESTION]: "
+labels: ["question", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 Before Asking
+        
+        **Have you:**
+        - [ ] Read the README.md completely?
+        - [ ] Checked the documentation for existing answers?
+        - [ ] Searched existing issues and discussions?
+        - [ ] Tried to solve this yourself first?
+        
+        **If any answer is "no", please do that first. Low-effort questions will be closed.**
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Confirm you've done basic research
+      options:
+        - label: I have thoroughly read all available documentation
+          required: true
+        - label: I have searched existing issues and discussions for this topic
+          required: true
+        - label: I have attempted to solve this problem myself
+          required: true
+        - label: This is a specific technical question, not a general request for help
+          required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Question Category
+      description: What area is your question about?
+      options:
+        - Cryptographic Theory/Implementation
+        - API Usage and Integration
+        - Performance and Optimization
+        - Build System and Dependencies
+        - Cross-Platform Compatibility
+        - Memory Management
+        - Thread Safety
+        - C ABI Integration
+        - Best Practices
+        - Other (specify clearly)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency Level
+      description: How urgent is this question?
+      options:
+        - Low (General curiosity, learning)
+        - Medium (Working on project, not blocked)
+        - High (Blocked on critical development)
+        - Critical (Production issue, immediate help needed)
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Specific Question
+      description: Your precise, well-researched question
+      placeholder: |
+        **Context:**
+        What are you trying to accomplish? What's your overall goal?
+        
+        **Specific Question:**
+        Ask ONE specific, technical question. Avoid multiple questions in one issue.
+        
+        **What You've Tried:**
+        Show the code you've written, approaches you've attempted, documentation you've consulted.
+        
+        **Expected Outcome:**
+        What result are you hoping to achieve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Relevant Code
+      description: Minimal, complete code example showing your issue
+      placeholder: |
+        ```zig
+        const std = @import("std");
+        const bls = @import("bls12-381");
+        
+        pub fn main() !void {
+            // Your code here - make it minimal and complete
+            // Show exactly what you're trying to do
+        }
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Details
+      description: System information (if relevant)
+      placeholder: |
+        - OS: [Operating system and version]
+        - Architecture: [x86_64, aarch64, etc.]
+        - Zig Version: [output of `zig version`]
+        - Library Version: [e.g., 0.1.0]
+        - Build Configuration: [Debug/Release, portable/native, etc.]
+
+  - type: textarea
+    id: research
+    attributes:
+      label: Research Completed
+      description: What documentation/resources have you already consulted?
+      placeholder: |
+        Demonstrate that you've done your homework:
+        
+        **Documentation Reviewed:**
+        - [ ] README.md sections X, Y, Z
+        - [ ] Function documentation for functionName()
+        - [ ] CONTRIBUTING.md (if relevant)
+        
+        **External Resources:**
+        - [ ] BLS12-381 specification
+        - [ ] Zig language documentation  
+        - [ ] BLST library documentation
+        - [ ] Related academic papers/standards
+        
+        **Code Investigation:**
+        - Examined source files: [list files you looked at]
+        - Tried variations: [describe what you tested]
+        - Debugging done: [what debugging steps you took]
+
+  - type: dropdown
+    id: response_preference
+    attributes:
+      label: Response Preference
+      description: How would you prefer to receive help?
+      options:
+        - Detailed technical explanation with code examples
+        - Pointer to relevant documentation with brief guidance
+        - Code review of my approach with suggestions
+        - Architectural guidance for design decisions
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: |
+        - Timeline constraints
+        - Project context (if it helps understand the question)
+        - Related issues or PRs
+        - Community discussion references

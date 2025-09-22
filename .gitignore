@@ -1,0 +1,101 @@
+# Zig build artifacts
+zig-out/
+.zig-cache/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS-specific files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+.tmp/
+
+# Build artifacts and binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.o
+*.obj
+
+# Test artifacts
+/test-results/
+/coverage/
+*.prof
+*.trace
+
+# Documentation build
+/docs/build/
+/target/doc/
+
+# Benchmark results
+/bench-results/
+benchmark_*.json
+
+# Security sensitive files (never commit these)
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secret*
+private*
+
+# Environment and configuration
+.env
+.env.*
+config.local.*
+
+# Package manager files
+node_modules/
+.npm/
+.yarn/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Core dumps
+core
+core.*
+vgcore.*
+
+# Profiling
+*.prof
+*.heap
+callgrind.out.*
+massif.out.*
+
+# Fuzzing artifacts
+/fuzz/artifacts/
+/fuzz/corpus/
+crash-*
+leak-*
+timeout-*
+
+# CI/CD artifacts
+.github/workflows/*.yml.bak
+
+.cursor/

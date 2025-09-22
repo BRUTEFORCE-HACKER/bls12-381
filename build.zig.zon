@@ -1,0 +1,27 @@
+.{
+    // bls12-381 signature library package
+    // Copyright (c) 2025 zk-evm
+    // https://github.com/zk-evm/bls12-381
+    // SPDX-License-Identifier: Apache-2.0
+
+    .name = .bls12_381,
+    .owner = .zk_evm,
+    .license = .apache,
+    .version = "0.1.0",
+    .description = "Highly performant bls12-381 signature library written in Zig",
+    .fingerprint = 0x299d05dc5ed1d0df,
+    .minimum_zig_version = "0.15.1",
+    .dependencies = .{
+        .blst = .{
+            .url = "https://github.com/supranational/blst/archive/refs/tags/v0.3.13.tar.gz",
+            .hash = "N-V-__8AAHB4OgByNs3JJNXs9f2gxmbJBYqM7HBRHfmwZa-e",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "LICENSE",
+        "README.md",
+    },
+}

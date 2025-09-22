@@ -1,0 +1,173 @@
+name: 🐛 Bug Report
+description: Report a defect in the BLS12-381 signature library
+title: "[BUG]: "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ Before Submitting
+        
+        **Have you:**
+        - [ ] Read the entire README.md?
+        - [ ] Checked existing issues for duplicates?
+        - [ ] Verified this is actually a bug and not user error?
+        - [ ] Tested with the latest version?
+        
+        **If any answer is "no", please do that first.**
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Confirm you've completed these mandatory steps
+      options:
+        - label: I have read the CONTRIBUTING.md file and SECURITY.md
+          required: true
+        - label: I have searched existing issues for duplicates
+          required: true
+        - label: I can reproduce this bug consistently
+          required: true
+        - label: This is not a security vulnerability (use private disclosure for those. see SECURITY.md)
+          required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component Affected
+      description: Which part of the library is affected?
+      options:
+        - Key Generation
+        - Signature Creation
+        - Signature Verification  
+        - Signature Aggregation
+        - Public Key Operations
+        - Memory Management
+        - Thread Pool
+        - Build System
+        - C ABI Bindings
+        - Documentation
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Critical (Cryptographic failure, memory corruption, security issue)
+        - High (Function completely broken, major performance regression)
+        - Medium (Function partially broken, minor performance regression)
+        - Low (Cosmetic issue, documentation error)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clear, detailed description of the bug
+      placeholder: |
+        Describe exactly what happens vs what should happen.
+        
+        BE SPECIFIC:
+        - What operation were you performing?
+        - What inputs were you using?
+        - What was the expected result?
+        - What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: System information
+      placeholder: |
+        - OS: (e.g., Ubuntu 22.04, macOS 14.0, Windows 11)
+        - Architecture: (e.g., x86_64, aarch64)
+        - Zig Version: (output of `zig version`)
+        - Library Version: (e.g., 0.1.0)
+        - Build Mode: (Debug, ReleaseFast, ReleaseSafe, ReleaseSmall)
+        - ADX Support: (Yes/No/Unknown)
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal Reproduction Case
+      description: Complete, minimal code that reproduces the issue
+      placeholder: |
+        ```zig
+        const std = @import("std");
+        const bls = @import("bls12-381");
+        
+        pub fn main() !void {
+            // Minimal code that reproduces the bug
+            // Must be complete and runnable
+        }
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: Describe the correct/expected behavior in detail
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: |
+        Include:
+        - Error messages (complete stack traces)
+        - Unexpected outputs
+        - Performance measurements if relevant
+        - Any other observable symptoms
+    validations:
+      required: true
+
+  - type: textarea
+    id: investigation
+    attributes:
+      label: Investigation Done
+      description: What debugging have you already tried?
+      placeholder: |
+        - Debugger output
+        - Profiling results
+        - Different input variations tested
+        - Workarounds attempted
+        - Related code examined
+
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: Impact Assessment
+      description: How does this bug affect usage?
+      options:
+        - label: Blocks critical functionality
+        - label: Workaround exists but is inconvenient
+        - label: Minor inconvenience
+        - label: Cosmetic issue only
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: |
+        - Related issues or PRs
+        - Potential root cause analysis
+        - Suggested fix approach
+        - Impact on downstream projects
